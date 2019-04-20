@@ -1,0 +1,29 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+OPTIONS: toc:nil num:nil
+#+TITLE: Welcome home
+
+* Paul
+
+
+** [[file:2019-04-20-About.org][About]]
+
+[[file:img/512x512.png]]
+
+
+#+begin_src python :results output replace code :session url
+from requests import get, post
+url = 'https://ping.com/'
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC python
+#+END_SRC
+
+#+begin_src python :results value replace code :session url
+get(url).json()
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC python
+{'status': 'ok'}
+#+END_SRC
