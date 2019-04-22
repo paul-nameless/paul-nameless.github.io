@@ -1,4 +1,0 @@
-#+SETUPFILE: templates/headers.org
-#+TITLE: About
-
-* About

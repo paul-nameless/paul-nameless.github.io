@@ -1,0 +1,23 @@
+#+SETUPFILE: templates/headers
+#+TITLE: My terminal life
+
+<2019-04-22 Mon>
+
+There is a lot of programs that can be replaced:
+
+- Email: =neomutt=
+- Torrents: =aria2c=
+- Calendar:
+  - =vdirsyncer= and =khal= for icloud calendar
+  - =gcalcli= for google calendar
+- File manager: =ranger=, =mc=
+- Pdf reader: I didn't know but =mc= has very good pdf reader
+- Notes taking: =org-mode= in emacs and =Beorg= app for iOS
+- Password manager: =pass= and app for iOS
+- Browser: =w3m= in emacs is awesome
+- Music: there is =cmus= for local library, also =mpv= that you can use to stream audio and =mpsyt= for listening youtube music.
+- Video: =mpv= one love
+
+-----
+
+#+INCLUDE: sitemap.org

@@ -1,3 +1,6 @@
+;; Force publishing
+;; (org-publish "org" t)
+
 (require 'ox-publish)
 
 (setq org-publish-project-alist
@@ -13,6 +16,10 @@
          :publishing-function org-html-publish-to-html
          :headline-levels 4             ; Just the default for this project.
          :auto-preamble t
+
+         :auto-sitemap t                ; Generate sitemap.org automagically...
+         :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
+         :sitemap-title ""         ; ... with title 'Sitemap'.
          )
 
         ("org-static"
