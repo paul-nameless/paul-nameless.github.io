@@ -1,2 +1,0 @@
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
-#+OPTIONS: toc:nil num:nil
