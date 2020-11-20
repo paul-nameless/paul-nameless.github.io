@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>My terminal life</title>
-<meta name="generator" content="Org mode" />
+<!-- 2020-11-20 Fri 16:04 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mastering kitty</title>
+<meta name="generator" content="Org mode">
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -191,7 +190,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel='stylesheet' type='text/css' href='css/style.css' />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -241,41 +240,57 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">My terminal life</h1>
-<p>
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-04-22 Mon&gt;</span></span>
+<header>
+<h1 class="title">Mastering kitty</h1>
+</header><p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-19 Thu&gt;</span></span>
 </p>
 
 <p>
-There is a lot of programs that can be replaced:
+Kitty
 </p>
 
-<ul class="org-ul">
-<li>Email: <code>neomutt</code></li>
-<li>Torrents: <code>aria2c</code></li>
-<li>Calendar:
-<ul class="org-ul">
-<li><code>vdirsyncer</code> and <code>khal</code> for icloud calendar</li>
-<li><code>gcalcli</code> for google calendar</li>
-</ul></li>
-<li>File manager: <code>ranger</code>, <code>mc</code></li>
-<li>Pdf reader: I didn't know but <code>mc</code> has very good pdf reader</li>
-<li>Notes taking: <code>org-mode</code> in emacs and <code>Beorg</code> app for iOS</li>
-<li>Password manager: <code>pass</code> and app for iOS</li>
-<li>Browser: <code>w3m</code> in emacs is awesome</li>
-<li>Music: there is <code>cmus</code> for local library, also <code>mpv</code> that you can use to stream audio and <code>mpsyt</code> for listening youtube music.</li>
-<li>Video: <code>mpv</code> one love</li>
-</ul>
 
-<hr />
+<figure>
+<img src="img/512x512.png" alt="512x512.png">
 
-<ul class="org-ul">
-<li><a href="index.html">Home</a></li>
-<li><a href="2019-04-22-my-terminal-life.html">My terminal life</a></li>
-</ul>
+<figcaption><span class="figure-number">Figure 1: </span>This is the caption for the next figure link (or table)</figcaption>
+</figure>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #ffad29; font-weight: bold;">def</span> <span style="color: #00ede1; font-weight: bold;">fill_mrs_events</span>(ch, stream):
+    <span style="color: #ff00ff;">table_schema</span> = MrsEvents.schema()
+    <span style="color: #ffad29; font-weight: bold;">for</span> chunk <span style="color: #ffad29; font-weight: bold;">in</span> iter_chunks(stream, 50000):
+        harakiri.i_am_alive()
+        <span style="color: #ff00ff;">data</span> = []
+        <span style="color: #ffad29; font-weight: bold;">for</span> record <span style="color: #ffad29; font-weight: bold;">in</span> chunk:
+            <span style="color: #ff00ff;">dr</span> = table_schema(record)
+            data.append(dr)
+
+        MrsEvents.insert(ch, data)
+        data <span style="color: #ffad29; font-weight: bold;">and</span> stream.ack(data[-1][<span style="color: #e67128;">"timestamp"</span>])
+
+</pre>
 </div>
-<div id="postamble" class="status">
-<p class="validation"></p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">
+(<span style="color: #ffad29; font-weight: bold;">require</span> '<span style="color: #008b8b;">package</span>)
+(package-initialize)
+
+(<span style="color: #ffad29; font-weight: bold;">require</span> '<span style="color: #008b8b;">sh-script</span>)
+(<span style="color: #ffad29; font-weight: bold;">require</span> '<span style="color: #008b8b;">python</span>)
+
+</pre>
+</div>
+
+<hr>
+
+<ul class="org-ul">
+<li>2020-11-20 <a href="index.html">index</a></li>
+<li>2020-11-20 <a href="mastering-kitty.html">Mastering kitty</a></li>
+</ul>
 </div>
 </body>
 </html>

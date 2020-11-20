@@ -1,4 +1,4 @@
 #+TITLE: 
 
-- [[file:index.org][Home]]
-- [[file:2019-04-22-my-terminal-life.org][My terminal life]]
+- 2020-11-20 [[file:index.org][index]]
+- 2020-11-20 [[file:mastering-kitty.org][Mastering kitty]]

@@ -1,4 +1,10 @@
-#+SETUPFILE: templates/headers
-#+TITLE: Home
+#+TITLE: Paul Nameless page
 
+# #+INCLUDE: sitemap.org :lines "-5" :only-contents t
 #+INCLUDE: sitemap.org
+
+I am a Software Developer by passion, an Emacs user by own will. I intend to use this space for sharing experience in the hope that they may be helpful to others and my future self.
+
+To get in touch, email me at [[mailto:reacsdas@gmail.com][reacsdas@gmail.com]]
+
+[[https://twitter.com/paul_nameless][Twitter]] [[https://github.com/paul-nameless][Github]]

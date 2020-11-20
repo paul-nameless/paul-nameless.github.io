@@ -1,0 +1,39 @@
+#+TITLE: Mastering kitty
+#+DATE: <2020-11-15 Sun>
+
+<2020-11-19 Thu>
+
+Kitty
+
+#+caption: This is the caption for the next figure link (or table)
+[[file:img/512x512.png]]
+
+#+begin_src python
+
+  def fill_mrs_events(ch, stream):
+      table_schema = MrsEvents.schema()
+      for chunk in iter_chunks(stream, 50000):
+          harakiri.i_am_alive()
+          data = []
+          for record in chunk:
+              dr = table_schema(record)
+              data.append(dr)
+
+          MrsEvents.insert(ch, data)
+          data and stream.ack(data[-1]["timestamp"])
+
+#+end_src
+
+#+begin_src lisp
+
+(require 'package)
+(package-initialize)
+
+(require 'sh-script)
+(require 'python)
+
+#+end_src
+
+-----
+
+#+include: sitemap.org

@@ -1,1 +1,11 @@
 * [[https://paul-nameless.github.io][Paul Nameless]]
+
+
+** Generate
+
+#+begin_src
+load-file<ret>
+publish.el
+
+org-publish-all<ret>
+#+end_src
