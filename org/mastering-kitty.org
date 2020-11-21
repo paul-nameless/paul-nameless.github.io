@@ -1,38 +1,82 @@
-#+TITLE: Mastering kitty
-#+DATE: <2020-11-15 Sun>
+#+TITLE: Mastering kitty terminal
 
-<2020-11-19 Thu>
+<2020-11-20 Fri>
 
-Kitty
+#+begin_quote
+[[https://sw.kovidgoyal.net/kitty/][kitty]] - the fast, featureful, GPU based terminal emulator
+#+end_quote
 
-#+caption: This is the caption for the next figure link (or table)
-[[file:img/512x512.png]]
+I've been using kitty for quite a long time now. Before it was iTerm and it was slow as my grand-mom's computer. Opening a new tab literally takes forever, I am always starting to type before it is loaded.
 
-#+begin_src python
+My life was desperate and wasteful before I found kitty.
 
-  def fill_mrs_events(ch, stream):
-      table_schema = MrsEvents.schema()
-      for chunk in iter_chunks(stream, 50000):
-          harakiri.i_am_alive()
-          data = []
-          for record in chunk:
-              dr = table_schema(record)
-              data.append(dr)
+#+caption: kitty - an animal
+[[file:img/kitty.jpg]]
 
-          MrsEvents.insert(ch, data)
-          data and stream.ack(data[-1]["timestamp"])
+Not that one, this one.
 
-#+end_src
+#+caption: kitty - a terminal
+[[file:img/the-kitty.png]]
 
-#+begin_src lisp
+I have tried and used different terminal emulators but prefer this one because it allows me to use less mouse, do the job faster and concentrate on the programming. As a person who uses Emacs in a terminal it's especially important to have a responsive environment.
 
-(require 'package)
-(package-initialize)
+One thing that I like about it is =tabs=. They were made as a simple text.
 
-(require 'sh-script)
-(require 'python)
+#+caption: Tabs are text
+[[file:img/new-tab.png]]
 
-#+end_src
+Kitty allows to [[https://sw.kovidgoyal.net/kitty/#remote-control][control]] terminal in any way, like send some text to one of the tabs, jump to the tab by name, split windows and run in each of them some command.
+
+One particular feature that I use every day is theme changer.
+
+#+caption: Change theme on the fly
+[[file:gif/theme-changer.gif]]
+
+I wrote a script that loads all themes from the folder, pipes them to ~fzf~ and tells ~kitty~ to change the color scheme when selected.
+
+Now let's find out about [[https://sw.kovidgoyal.net/kitty/#kittens][kittens]] - small terminal programs that can be used to extend kitty's functionality.
+
+For example Unicode input.
+
+#+caption: Choose Unicode and paste at cursor
+[[file:gif/unicode-input.gif]]
+
+Another example of kitten: press a shortcut and paste file path from the screen.
+I know that there are a lot of programs like ~fpp~ and a lot of plugins for tmux. I played with all of them and none of them worked as good as this one.
+
+#+caption: Choose file path and paste
+[[file:gif/file-path-chooser.gif]]
+
+You can also choose/copy/insert lines, IPs, URLs or even write your own nice little kitten which will parse the screen by your pattern (e.g. parse and copy timestamps).
+
+But sometimes you might need to select something specific. Well =no problema amigo=, press another shortcut and buffer output will be redirected to any program you want (vim in my example). Then few presses and =voila= it's in the clipboard.
+
+#+caption: Find and copy
+[[file:gif/clipboard.gif]]
+
+Next, I use [[https://github.com/paul-nameless/tg][telegram in terminal]] so when notification comes and I press on it I will jump right to the correct tab.
+
+#+caption: Bang, boom, jump to the tab
+[[file:gif/jump-to-tab.gif]]
+
+Now, window layouts.
+A layout is an arrangement of multiple kitty windows inside a top-level OS window. It's nothing new, every terminal has this feature already. But I found it more convenient. You can choose layout on the fly, split window however you want, move it around, etc.
+
+#+caption: Split window however you want
+[[file:gif/layouts.gif]]
+
+There is nothing special nowadays to be able to view images in a terminal. It's working great, I use it regularly to view pictures/stickers from =telegram=.
+
+#+caption: Images in terminal
+[[file:gif/icat.gif]]
+
+*Conclusion*
+
+Kitty has a lot of other cool features and customization, [[https://sw.kovidgoyal.net/kitty/][check it out]].
+
+I don't want you to convince to use one terminal over another. I want to share my experience and will be happy if it will help somebody (or improve personal life).
+
+P.S. If you did some cool stuff with kitty, please share it.
 
 -----
 

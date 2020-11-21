@@ -9,3 +9,20 @@ publish.el
 
 org-publish-all<ret>
 #+end_src
+
+** Publish
+
+#+begin_src sh
+git subtree push --prefix dist origin gh-pages
+#+end_src
+
+** Record and optimize
+
+#+begin_src sh
+ffmpeg -i r.mov -pix_fmt rgb24 -r 10 output.gif && gifsicle -O3 --colors 256 output.gif -o output.gif
+#+end_src
+
+#+begin_src sh
+optipng example.png
+jpegoptim example.jpg
+#+end_src

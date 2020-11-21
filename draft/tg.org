@@ -3,6 +3,25 @@
 <2020-11-20 Fri>
 
 Hello
+#+caption: This is the caption for the next figure link (or table)
+[[file:img/512x512.png]]
+
+#+begin_src python
+
+  def test(*args, **kwargs):
+      print(args, kwargs)
+
+#+end_src
+
+#+begin_src lisp
+
+  (require 'package)
+  (package-initialize)
+
+  (require 'sh-script)
+  (require 'python)
+
+#+end_src
 
 -----
 

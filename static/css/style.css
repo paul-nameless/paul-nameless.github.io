@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+* {
+    font-family: Roboto Mono;
+}
+
+h1 {
+    font-weight: lighter;
+}
 
 html {
     max-width: 800px;
@@ -10,10 +18,29 @@ img {
     height: auto;
 }
 
-pre.src {
-    overflow-y: scroll;
+blockquote {
+    border-left: 3px solid #b1b1b1;
+    padding-left: 8px;
+}
+
+figcaption {
+    text-align: center;
 }
 
 .figure-number {
     display: none;
+}
+
+pre.src {
+    overflow-y: scroll;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+    border: 1px solid #e7eaed;
+    border-radius: 3px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
 }

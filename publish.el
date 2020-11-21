@@ -33,6 +33,11 @@
          :htmlized-source t
          :html-preamble nil
          :html-postamble nil
+         :html-link-home "/"
+         :html-link-up "/"
+         :html-home/up-format  "<div id=\"org-div-home-and-up\">
+                               <a accesskey=\"H\" href=\"%s\">Home</a>
+                               </div>"
 
          :auto-sitemap t
          :sitemap-filename "sitemap.org"
