@@ -13,7 +13,7 @@ org-publish-all<ret>
 ** Publish
 
 #+begin_src sh
-git subtree push --prefix dist origin gh-pages
+git subtree push --prefix public origin gh-pages
 #+end_src
 
 ** Record and optimize
