@@ -1,4 +1,4 @@
 #+TITLE: 
 
-- 2020-11-20 [[file:index.org][index]]
-- 2020-11-20 [[file:mastering-kitty.org][Mastering kitty]]
+- 2020-11-20 [[file:mastering-kitty.org][Mastering kitty terminal]]
+- 2020-11-19 [[file:index.org][Paul Nameless page]]

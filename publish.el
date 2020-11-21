@@ -1,31 +1,16 @@
-;; (require 'package)
-;; (package-initialize)
-
-;; (require 'sh-script)
-;; (require 'python)
-
 (require 'ox-publish)
-;; (require 'org)
-;; (require 'ox-publish)
-;; (require 'ox-html)
-;; (require 'org-element)
-
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/htmlize-1.55/"))
 (require 'htmlize)
 
 (setq org-html-validation-link nil)
-;; (setq org-src-fontify-natively t)
 (setq org-export-with-date nil)
 
 (setq org-publish-project-alist
       '(
 
-       ;; ... all the components ...
-
         ("posts"
          :base-directory "~/Documents/blog/org/"
          :base-extension "org"
-         :publishing-directory "~/Documents/blog/public/"
+         :publishing-directory "~/Documents/blog/docs/"
          :recursive t
          :publishing-function org-html-publish-to-html
          :headline-levels 4
@@ -75,7 +60,7 @@
         ("static"
          :base-directory "~/Documents/blog/static/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/blog/public/"
+         :publishing-directory "~/Documents/blog/docs/"
          :recursive t
          :publishing-function org-publish-attachment
          )

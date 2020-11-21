@@ -1,4 +1,5 @@
 #+TITLE: Mastering kitty terminal
+#+DATE: <2020-11-20 Fri>
 
 <2020-11-20 Fri>
 
