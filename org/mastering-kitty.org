@@ -124,10 +124,10 @@ I don't want you to convince to use one terminal over another. I want to share m
 
 P.S. If you did some cool stuff with kitty, please share it.
 
-*Helpful links*
+Helpful links
 
-- [[https://gist.github.com/paul-nameless/a14e4a6ba310119df2cf5409cbb3738b][My kitty config files]] - kitty.conf, .zshrc aliases and vim-ansi script
-- [[https://sw.kovidgoyal.net/kitty/conf.html?highlight=listen_on#opt-kitty.listen_on][Kitty config doc]]
+1. [[https://gist.github.com/paul-nameless/a14e4a6ba310119df2cf5409cbb3738b][My kitty config files]] - kitty.conf, .zshrc aliases and vim-ansi script
+2. [[https://sw.kovidgoyal.net/kitty/conf.html?highlight=listen_on#opt-kitty.listen_on][Kitty config doc]]
 
 -----
 

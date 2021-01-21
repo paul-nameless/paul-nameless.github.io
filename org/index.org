@@ -5,7 +5,3 @@
 #+INCLUDE: sitemap.org
 
 I am a Software Developer by passion and Emacs user by own will. I intend to use this space for sharing my experience in the hope that it may be helpful to others and my future self.
-
-To get in touch, email me at [[mailto:reacsdas@gmail.com][reacsdas@gmail.com]]
-
-[[https://twitter.com/paul_nameless][Twitter]] [[https://github.com/paul-nameless][Github]]

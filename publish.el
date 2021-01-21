@@ -7,8 +7,14 @@
 (defun org-blog-postamble (plist)
   "Post-amble for whole blog."
   (concat
-  "To get in touch, email me at [[mailto:reacsdas@gmail.com][reacsdas@gmail.com]]
-   [[https://twitter.com/paul_nameless][Twitter]] [[https://github.com/paul-nameless][Github]]"
+  "To get in touch, email me at <a href='mailto:reacsdas@gmail.com'>reacsdas@gmail.com</a> <br /> <br />
+   <a href='https://twitter.com/paul_nameless'>Twitter</a> <a href='https://github.com/paul-nameless'>Github</a>
+
+   <!-- Cloudflare Web Analytics -->
+   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c0ad197c226461eaccf6861b45f1cf8\"}'>
+   </script>
+   <!-- End Cloudflare Web Analytics -->"
+  ))
 
 
 (setq org-publish-project-alist
@@ -24,8 +30,7 @@
          :auto-preamble t
          :htmlized-source t
          :html-preamble nil
-         ;; :html-postamble org-blog-postamble
-         :html-postamble nil
+         :html-postamble org-blog-postamble
          :html-link-home "/"
          :html-link-up "/"
          :html-home/up-format  "<div id=\"org-div-home-and-up\">

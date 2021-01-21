@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-01-21 Thu 18:50 -->
+<!-- 2021-01-21 Thu 20:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mastering kitty terminal</title>
@@ -389,7 +389,7 @@ You can find vim-ansi file in my config at the end of the page, but here is how 
 </p>
 
 <p>
-In the kitty.conf map this command to any shortcut. <code>pipe</code> means pipe the buffer of the screen to the command you specified <code>/usr/local/bin/vim-ansi</code>. <code>@ansi</code> basically means pass ansi codes, it will allow us to see colored text in vim and <code>overlay</code> means do it in the current screen instead of openning new window or splitting it.
+Add line below to kitty.conf. <code>pipe</code> means pipe the buffer of the screen to the command you specified <code>/usr/local/bin/vim-ansi</code>. <code>@ansi</code> basically means pass ansi codes, it will allow us to see colored text in vim and <code>overlay</code> means do it on top of our current screen.
 </p>
 <div class="org-src-container">
 <pre class="src src-conf">map super+f pipe @ansi overlay /usr/local/bin/vim-ansi
@@ -475,13 +475,13 @@ P.S. If you did some cool stuff with kitty, please share it.
 </p>
 
 <p>
-<b>Helpful links</b>
+Helpful links
 </p>
 
-<ul class="org-ul">
-<li><a href="https://gist.github.com/paul-nameless/a14e4a6ba310119df2cf5409cbb3738b">My kitty config files</a></li>
+<ol class="org-ol">
+<li><a href="https://gist.github.com/paul-nameless/a14e4a6ba310119df2cf5409cbb3738b">My kitty config files</a> - kitty.conf, .zshrc aliases and vim-ansi script</li>
 <li><a href="https://sw.kovidgoyal.net/kitty/conf.html?highlight=listen_on#opt-kitty.listen_on">Kitty config doc</a></li>
-</ul>
+</ol>
 
 <hr>
 
@@ -489,6 +489,15 @@ P.S. If you did some cool stuff with kitty, please share it.
 <li>2020-11-20 <a href="mastering-kitty.html">Mastering kitty terminal</a></li>
 <li>2020-11-19 <a href="index.html">Paul Nameless page</a></li>
 </ul>
+</div>
+<div id="postamble" class="status">
+To get in touch, email me at <a href='mailto:reacsdas@gmail.com'>reacsdas@gmail.com</a> <br /> <br />
+   <a href='https://twitter.com/paul_nameless'>Twitter</a> <a href='https://github.com/paul-nameless'>Github</a>
+
+   <!-- Cloudflare Web Analytics -->
+   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2c0ad197c226461eaccf6861b45f1cf8"}'>
+   </script>
+   <!-- End Cloudflare Web Analytics -->
 </div>
 </body>
 </html>

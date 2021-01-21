@@ -1,8 +1,12 @@
-* [[https://paul-nameless.github.io][Paul Nameless]]
+* [[https://paul-nameless.com/][Paul Nameless]] blog
+
+Test
+#+begin_src sh
+python3 -m http.server --directory=docs
+#+end_src
 
 
-** Generate
-
+Generate
 #+begin_src
 load-file<ret>
 publish.el
@@ -10,14 +14,12 @@ publish.el
 org-publish-all<ret>
 #+end_src
 
-** Publish
-
+Publish
 #+begin_src sh
 git push origin master
 #+end_src
 
-** Record and optimize
-
+Record and optimize images
 #+begin_src sh
 ffmpeg -i r.mov -pix_fmt rgb24 -r 10 output.gif && gifsicle -O3 --colors 256 output.gif -o output.gif
 #+end_src
