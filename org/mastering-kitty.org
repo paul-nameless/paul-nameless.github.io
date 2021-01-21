@@ -34,6 +34,25 @@ One particular feature that I use every day is theme changer.
 [[file:gif/theme-changer.gif]]
 
 I wrote a script that loads all themes from the folder, pipes them to ~fzf~ and tells ~kitty~ to change the color scheme when selected.
+You can find link to my config in the end of the page, but there are a lot of things so you might be particularly interested in this lines:
+
+Enable remote control in kitty config
+#+begin_src conf
+...
+allow_remote_control yes
+listen_on unix:/tmp/kitty
+...
+#+end_src
+
+Download kitty themes, google to find more
+#+begin_src bash
+git clone https://github.com/dexpota/kitty-themes ~/.config/kitty/themes
+#+end_src
+
+Create an alias with this command
+#+begin_src bash
+cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @ --to unix:/tmp/kitty set-colors -a -c {}'; cd -
+#+end_src
 
 Now let's find out about [[https://sw.kovidgoyal.net/kitty/#kittens][kittens]] - small terminal programs that can be used to extend kitty's functionality.
 
@@ -50,15 +69,35 @@ I know that there are a lot of programs like ~fpp~ and a lot of plugins for tmux
 
 You can also choose/copy/insert lines, IPs, URLs or even write your own nice little kitten which will parse the screen by your pattern (e.g. parse and copy timestamps).
 
-But sometimes you might need to select something specific. Well =no problema amigo=, press another shortcut and buffer output will be redirected to any program you want (vim in my example). Then few presses and =voila= it's in the clipboard.
+But sometimes you might need to select something specific. Well no problema amigo, press another shortcut and buffer output will be redirected to any program you want (vim in my example). Then few presses and voila it's in the clipboard.
 
 #+caption: Find and copy
 [[file:gif/clipboard.gif]]
+
+You can find vim-ansi file in my config at the end of the page, but here is how to enable it.
+
+Add line below to kitty.conf. =pipe= means pipe the buffer of the screen to the command you specified =/usr/local/bin/vim-ansi=. =@ansi= basically means pass ansi codes, it will allow us to see colored text in vim and =overlay= means do it on top of our current screen.
+#+begin_src conf
+map super+f pipe @ansi overlay /usr/local/bin/vim-ansi
+#+end_src
+
+This is quite tricky script which is done to keep colored text of the term and maps =q= to exit vim faster and does not copies new line when copying.
+#+begin_src sh
+#!/bin/sh
+cat - | awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' > /tmp/buff
+vim -c 'term tail -n 200 /tmp/buff' -c ':only' -c 'nnoremap q :q!<CR>' -c 'map $ g_' < /dev/tty
+#+end_src
 
 Next, I use [[https://github.com/paul-nameless/tg][telegram in terminal]] so when notification comes and I press on it I will jump right to the correct tab.
 
 #+caption: Bang, boom, jump to the tab
 [[file:gif/jump-to-tab.gif]]
+
+Here is an example:
+
+#+begin_src bash
+terminal-notifier -title test -message 'Testing kitty remote control' -execute '/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window && /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:[replace with you tab title]'
+#+end_src
 
 Now, window layouts.
 A layout is an arrangement of multiple kitty windows inside a top-level OS window. It's nothing new, every terminal has this feature already. But I found it more convenient. You can choose layout on the fly, split window however you want, move it around, etc.
@@ -71,6 +110,12 @@ There is nothing special nowadays to be able to view images in a terminal. It's 
 #+caption: Images in terminal
 [[file:gif/icat.gif]]
 
+=icat= is just an alias to
+
+#+begin_src sh
+alias icat="kitty +kitten icat --align=left"
+#+end_src
+
 *Conclusion*
 
 Kitty has a lot of other cool features and customization, [[https://sw.kovidgoyal.net/kitty/][check it out]].
@@ -78,6 +123,11 @@ Kitty has a lot of other cool features and customization, [[https://sw.kovidgoya
 I don't want you to convince to use one terminal over another. I want to share my experience and will be happy if it will help somebody (or improve personal life).
 
 P.S. If you did some cool stuff with kitty, please share it.
+
+*Helpful links*
+
+- [[https://gist.github.com/paul-nameless/a14e4a6ba310119df2cf5409cbb3738b][My kitty config files]] - kitty.conf, .zshrc aliases and vim-ansi script
+- [[https://sw.kovidgoyal.net/kitty/conf.html?highlight=listen_on#opt-kitty.listen_on][Kitty config doc]]
 
 -----
 

@@ -4,6 +4,13 @@
 (setq org-html-validation-link nil)
 (setq org-export-with-date nil)
 
+(defun org-blog-postamble (plist)
+  "Post-amble for whole blog."
+  (concat
+  "To get in touch, email me at [[mailto:reacsdas@gmail.com][reacsdas@gmail.com]]
+   [[https://twitter.com/paul_nameless][Twitter]] [[https://github.com/paul-nameless][Github]]"
+
+
 (setq org-publish-project-alist
       '(
 
@@ -17,6 +24,7 @@
          :auto-preamble t
          :htmlized-source t
          :html-preamble nil
+         ;; :html-postamble org-blog-postamble
          :html-postamble nil
          :html-link-home "/"
          :html-link-up "/"

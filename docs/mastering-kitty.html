@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-21 Sat 12:21 -->
+<!-- 2021-01-21 Thu 18:50 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mastering kitty terminal</title>
@@ -196,7 +196,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -312,7 +312,35 @@ One particular feature that I use every day is theme changer.
 
 <p>
 I wrote a script that loads all themes from the folder, pipes them to <code>fzf</code> and tells <code>kitty</code> to change the color scheme when selected.
+You can find link to my config in the end of the page, but there are a lot of things so you might be particularly interested in this lines:
 </p>
+
+<p>
+Enable remote control in kitty config
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">...
+allow_remote_control yes
+listen_on unix:/tmp/kitty
+...
+</pre>
+</div>
+
+<p>
+Download kitty themes, google to find more
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">git clone https://github.com/dexpota/kitty-themes ~/.config/kitty/themes
+</pre>
+</div>
+
+<p>
+Create an alias with this command
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #483d8b;">cd</span> ~/.config/kitty/themes &amp;&amp; fzf --preview <span style="color: #8b2252;">'head -n 40 {} &amp;&amp; kitty @ --to unix:/tmp/kitty set-colors -a -c {}'</span>; <span style="color: #483d8b;">cd</span> -
+</pre>
+</div>
 
 <p>
 Now let's find out about <a href="https://sw.kovidgoyal.net/kitty/#kittens">kittens</a> - small terminal programs that can be used to extend kitty's functionality.
@@ -346,7 +374,7 @@ You can also choose/copy/insert lines, IPs, URLs or even write your own nice lit
 </p>
 
 <p>
-But sometimes you might need to select something specific. Well <code>no problema amigo</code>, press another shortcut and buffer output will be redirected to any program you want (vim in my example). Then few presses and <code>voila</code> it's in the clipboard.
+But sometimes you might need to select something specific. Well no problema amigo, press another shortcut and buffer output will be redirected to any program you want (vim in my example). Then few presses and voila it's in the clipboard.
 </p>
 
 
@@ -355,6 +383,28 @@ But sometimes you might need to select something specific. Well <code>no problem
 
 <figcaption><span class="figure-number">Figure 7: </span>Find and copy</figcaption>
 </figure>
+
+<p>
+You can find vim-ansi file in my config at the end of the page, but here is how to enable it.
+</p>
+
+<p>
+In the kitty.conf map this command to any shortcut. <code>pipe</code> means pipe the buffer of the screen to the command you specified <code>/usr/local/bin/vim-ansi</code>. <code>@ansi</code> basically means pass ansi codes, it will allow us to see colored text in vim and <code>overlay</code> means do it in the current screen instead of openning new window or splitting it.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">map super+f pipe @ansi overlay /usr/local/bin/vim-ansi
+</pre>
+</div>
+
+<p>
+This is quite tricky script which is done to keep colored text of the term and maps <code>q</code> to exit vim faster and does not copies new line when copying.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: brightgreen;">#</span><span style="color: brightgreen;">!/bin/</span><span style="color: #a020f0;">sh</span>
+cat - | awk <span style="color: #8b2252;">'/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}'</span> &gt; /tmp/buff
+vim -c <span style="color: #8b2252;">'term tail -n 200 /tmp/buff'</span> -c <span style="color: #8b2252;">':only'</span> -c <span style="color: #8b2252;">'nnoremap q :q!&lt;CR&gt;'</span> -c <span style="color: #8b2252;">'map $ g_'</span> &lt; /dev/tty
+</pre>
+</div>
 
 <p>
 Next, I use <a href="https://github.com/paul-nameless/tg">telegram in terminal</a> so when notification comes and I press on it I will jump right to the correct tab.
@@ -366,6 +416,15 @@ Next, I use <a href="https://github.com/paul-nameless/tg">telegram in terminal</
 
 <figcaption><span class="figure-number">Figure 8: </span>Bang, boom, jump to the tab</figcaption>
 </figure>
+
+<p>
+Here is an example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">terminal-notifier -title test -message <span style="color: #8b2252;">'Testing kitty remote control'</span> -execute <span style="color: #8b2252;">'/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window &amp;&amp; /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:[replace with you tab title]'</span>
+</pre>
+</div>
 
 <p>
 Now, window layouts.
@@ -391,6 +450,15 @@ There is nothing special nowadays to be able to view images in a terminal. It's 
 </figure>
 
 <p>
+<code>icat</code> is just an alias to
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #483d8b;">alias</span> <span style="color: #ff00ff;">icat</span>=<span style="color: #8b2252;">"kitty +kitten icat --align=left"</span>
+</pre>
+</div>
+
+<p>
 <b>Conclusion</b>
 </p>
 
@@ -405,6 +473,15 @@ I don't want you to convince to use one terminal over another. I want to share m
 <p>
 P.S. If you did some cool stuff with kitty, please share it.
 </p>
+
+<p>
+<b>Helpful links</b>
+</p>
+
+<ul class="org-ul">
+<li><a href="https://gist.github.com/paul-nameless/a14e4a6ba310119df2cf5409cbb3738b">My kitty config files</a></li>
+<li><a href="https://sw.kovidgoyal.net/kitty/conf.html?highlight=listen_on#opt-kitty.listen_on">Kitty config doc</a></li>
+</ul>
 
 <hr>
 
