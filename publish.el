@@ -67,7 +67,8 @@
 
          :html-doctype "html5"
          :html-html5-fancy t
-         :html-head "<link rel='stylesheet' type='text/css' href='css/style.css' />"
+         :html-head "<link rel='stylesheet' type='text/css' href='css/style.css' />
+<link rel='icon' type='image/png' href='/favicon.png'>"
          )
 
         ("static"
