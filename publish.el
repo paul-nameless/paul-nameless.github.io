@@ -1,3 +1,5 @@
+(require 'package)
+(package-initialize)
 (require 'ox-publish)
 (require 'htmlize)
 

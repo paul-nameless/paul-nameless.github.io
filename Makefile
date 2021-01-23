@@ -1,19 +1,17 @@
-# Makefile for myblog
+.PHONY: all publish generate clean
 
-.PHONY: all publish publish_no_init
+all: generate
 
-all: publish
-
-publish: publish.el
-		@echo "Publishing... with current Emacs configurations."
+generate: publish.el
+		@echo "Generating..."
 		emacs --batch --load publish.el --funcall org-publish-all
 
-publish_no_init: publish.el
-		@echo "Publishing... with --no-init."
-		emacs --batch --no-init --load publish.el --funcall org-publish-all
+publish: publish.el
+		@echo "Publishing... "
+		git push origin master
 
 clean:
-		@echo "Cleaning up.."
+		@echo "Cleaning.."
 		@rm -rvf *.elc
 		@rm -rvf docs/*
 		@rm -rvf ~/.org-timestamps/*
