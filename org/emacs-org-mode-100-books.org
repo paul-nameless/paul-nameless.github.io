@@ -1,0 +1,110 @@
+#+TITLE: Emacs, org-mode and 100 books in a year
+#+DATE: <2021-01-30 Sat>
+
+<2021-01-30 Sat>
+
+Last couple of years I keep track of books I read. I've been doing it in different way and over time I improved the way I do it.
+
+Why do I need to record the books?
+1. I read quite a lot and can forget what I read after a few years
+2. Along with the book I write my thoughts about it and what I learned
+3. I am listening a lot of audiobooks and it's interesting to track how many hours I listened in total
+
+What I need?
+1. Easy way to keep list of books
+2. Easy way to keep track of when I finished reading, how many hours the book, etc.
+3. The way to count the number of hours I listened the books through the year (automatically)
+
+So, org-mode is ideal for this.
+
+#+begin_src org
+  ,* 2020 [100/100]
+
+  ,** DONE Fooled by Randomness
+  CLOSED: [2020-12-31 Thu 18:32]
+  :PROPERTIES:
+  :author:   Nassim Nicholas Taleb
+  :year:     2001
+  :name:     Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets
+  :END:
+
+  My thoughts about book
+
+  ,** DONE Hitchhiker's Guide to the Galaxy
+  CLOSED: [2020-12-29 Tue 18:27]
+  :PROPERTIES:
+  :author:   Douglas Adams
+  :length:   12:47
+  :year:     1996
+  :END:
+
+  42
+
+  ...
+#+end_src
+
+As you can see, 1st-level headline indicates each year, it contains the number of books I read. 2nd-level headlines is the books, where I write the title of the book. If it's too big, I put it in the properties =name=.
+Also, I keep the book's state:
+
+- =TODO=: want to read in the nearest time
+- =DOING=: reading right now
+- =DONE=: finished
+
+When state goes to DONE org-mode sets date for me, so I can know when finished reading.
+In the properties I record =author=, =length= if this is audiobook and other optional info like =year=.
+
+If I like the book I set the tag =:like:=. This is the books that I would read again and they influenced me a lot.
+
+This is all quite basic, but here is comes the best part, org mode will build a table with all the books I read. And count how many hours I listened in total.
+
+This is done by using column view, everything beyond =#+BEGIN= is generated automatically. (shortened for readability)
+
+#+begin_src org
+  ,* 2020 [100/100]
+
+  ,#+TAGS: like(l)
+  ,#+COLUMNS: %author(Author) %32ITEM(Name) %TODO %TAGS(Tags) %length(Total){:}
+
+  ,#+BEGIN: columnview :hlines 1 :id local :skip-empty-rows t
+  | Author                | Name                             | TODO | Tags |  Total |
+  |-----------------------+----------------------------------+------+------+--------|
+  |                       | 2020                             |      |      | 788:17 |
+  | Nassim Nicholas Taleb | Fooled by Randomness             | DONE |      |        |
+  | Douglas Adams         | Hitchhiker's Guide to the Galaxy | DONE |      |  12:47 |
+  ...
+
+  ,** DONE Fooled by Randomness...
+  ,** DONE Hitchhiker's Guide to the Galaxy...
+#+end_src
+
+So as you can see, I "spent" 788 hours (around 32 days) listening audiobooks.
+That's quite amazing I think, it is 1 month out of 12 in the year!
+
+But here is a great part about audiobooks, I didn't "spent" time or waste it. During listening I am usually running, cycling, walking or doing some other things.
+Imagine if I read all this books, I would literally "wasted" 1/12 of the year in reading, cause that's a lot of time. Even if you read faster that's too much anyway.
+
+Also, as I am working many hours in a day on computer my eyes are quite tired and making them work even more by reading books won't do any good for them.
+So with audiobooks I am able to exercise, enjoy books and rest my eyes at the same time.
+
+*Conclusion*
+
+I don't think that number of books you read is really matter.
+
+ =Number of books that influenced and changed you are what matters.=
+
+But it was a challenge for me and it happened that I did it though didn't think I will hit a hundred at the end of the year.
+
+I really like audiobooks, I am listening for over 10 years. I remember that firstly it was difficult to focus but over time my auditory memory improved.
+Often, when I find myself thinking about or dreaming and I turn off the book and listen to the music or birds in the park.
+
+Enjoy books, enjoy music, enjoy life.
+
+Links
+
+- [[https://orgmode.org/][Org mode]]
+- [[https://orgmode.org/manual/Column-View.html#Column-View][Org-mode column view]]
+- [[https://orgmode.org/manual/Properties-and-Columns.html#Properties-and-Columns][Org-mode properties]]
+
+-----
+
+#+include: sitemap.org

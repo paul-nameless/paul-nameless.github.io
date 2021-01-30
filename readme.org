@@ -28,3 +28,19 @@ ffmpeg -i r.mov -pix_fmt rgb24 -r 10 output.gif && gifsicle -O3 --colors 256 out
 optipng example.png
 jpegoptim example.jpg
 #+end_src
+
+Dark theme
+#+begin_src css
+
+  @media (prefers-color-scheme: dark) {
+      html {
+          background: #1E1E1E;
+          color: #f5f5f7;
+      }
+
+      a {
+          color: #0083FA;
+      }
+  }
+
+#+end_src
