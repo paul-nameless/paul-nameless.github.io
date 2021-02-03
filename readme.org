@@ -44,3 +44,18 @@ Dark theme
   }
 
 #+end_src
+
+** Meta info
+
+#+HTML_HEAD_EXTRA: <link rel="canonical" href="https://paul-nameless.com/mastering-kitty.html">
+#+HTML_HEAD_EXTRA: <meta property="og:title" content="Mastering kitty terminal" />
+
+#+begin_src html
+<link rel="canonical" href="https://paul-nameless.com/mastering-kitty.html">
+
+<meta property="og:title" content="Mastering kitty terminal" />
+<meta property="og:url" content="https://paul-nameless.com/mastering-kitty.html" />
+<meta property="og:description" content="I've been using kitty for quite a long time now..." />
+<meta property="og:image" content="https://paul-nameless.com/img/kitty.jpg" />
+
+#+end_src
