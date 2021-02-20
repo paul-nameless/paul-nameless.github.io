@@ -11,6 +11,12 @@
   (concat
   "To get in touch, email me at <a href=\"mailto:reacsdas@gmail.com\">reacsdas@gmail.com</a> <br /><br />
 Discuss and comment in <a href=\"https://t.me/reacsdas\">Telegram</a> | <a href=\"https://github.com/paul-nameless\">Github</a> | <a href=\"https://twitter.com/paul_nameless\">Twitter</a><br/>
+<br/>
+<form action=\"https://42emails.com/api/email\">
+  <input type=\"text\" name=\"email\" placeholder=\"Email\" />
+  <input type=\"hidden\" name=\"form_id\" value=\"08796a82e266426c8d202b135d25a274\" />
+  <input type=\"submit\" value=\"Subscribe\" /><br/>
+</form>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c0ad197c226461eaccf6861b45f1cf8\"}'>
