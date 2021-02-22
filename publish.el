@@ -14,7 +14,7 @@ Discuss and comment in <a href=\"https://t.me/reacsdas\">Telegram</a> | <a href=
 <br/>
 <form action=\"https://42emails.com/api/email\">
   <input type=\"text\" name=\"email\" placeholder=\"Email\" />
-  <input type=\"hidden\" name=\"form_id\" value=\"4962abc660cf405fb9b570612df6fe44\" />
+  <input type=\"hidden\" name=\"form_id\" value=\"c88adf06aac24ae5b6798b33a1075330\" />
   <input type=\"submit\" value=\"Subscribe\" /><br/>
 </form>
 
