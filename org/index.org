@@ -5,6 +5,4 @@
 
 I am a Software Developer by passion and Emacs user by own will. I intend to use this space for sharing my experience in the hope that it may be helpful to others and my future self.
 
------
-
 #+INCLUDE: sitemap.org
