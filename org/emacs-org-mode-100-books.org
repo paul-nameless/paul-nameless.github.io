@@ -104,7 +104,3 @@ Links
 - [[https://orgmode.org/][Org mode]]
 - [[https://orgmode.org/manual/Column-View.html#Column-View][Org-mode column view]]
 - [[https://orgmode.org/manual/Properties-and-Columns.html#Properties-and-Columns][Org-mode properties]]
-
------
-
-#+include: sitemap.org

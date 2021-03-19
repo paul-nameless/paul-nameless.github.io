@@ -128,7 +128,3 @@ Helpful links
 
 1. [[https://gist.github.com/paul-nameless/a14e4a6ba310119df2cf5409cbb3738b][My kitty config files]] - kitty.conf, .zshrc aliases and vim-ansi script
 2. [[https://sw.kovidgoyal.net/kitty/conf.html?highlight=listen_on#opt-kitty.listen_on][Kitty config doc]]
-
------
-
-#+include: sitemap.org
