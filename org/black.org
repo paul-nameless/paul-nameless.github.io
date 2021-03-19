@@ -1,0 +1,142 @@
+#+TITLE: Black Python formatting
+#+DATE: <2021-03-19 Fri>
+
+<2021-03-19 Fri>
+
+*Black* is the uncompromising Python code formatter. It gives you speed, determinism, and freedom from ~pycodestyle~ nagging about formatting. You will save time and mental energy for more important matters.
+
+Blackened code looks the same regardless of the project you're reading. Formatting becomes transparent after a while and you can focus on the content instead.
+
+*Black* makes code review faster by producing the smallest diffs possible.
+
+
+** Why
+
+#+begin_quote
+Black is opinionated so you don't have to be.
+#+end_quote
+
+#+begin_quote
+An auto-formatter that doesn't suck is all I want for Xmas!
+#+end_quote
+
+#+begin_quote
+At least the name is good.
+#+end_quote
+
+You can write in any style you want and autoformatting tools will make your code beautiful.
+
+Don't waste your time arguing about code style. Black it, forget it.
+
+
+** Usage
+
+*** Install
+
+#+begin_src sh
+pip install black
+#+end_src
+
+*** Manually
+
+#+begin_src sh
+# formats file in place
+black [file]
+
+# just check
+black -c [file]
+
+# just output a diff for each file
+black --diff [file]
+#+end_src
+
+*** Plugins
+
+There are plugins for anything:
+
+- PyCharm
+- VSCode
+- Jupiter
+- Emacs
+- Vim
+- ...
+
+For more info have a look at [[https://github.com/psf/black#editor-integration][Black Github Page]]
+
+*** Git hook
+
+Use git ~pre-commit~ hook.
+
+It will automatically reformat files and add them to commit.
+
+*File*: ~.git/hooks/pre-commit~
+
+#+begin_src sh
+#!/bin/sh
+
+set -e
+
+ROOT=$(git rev-parse --show-toplevel)
+FILES=$(git diff --name-status --cached | awk '{print "$2"}' | grep '\.py' | xargs -I {} echo "$ROOT/{}" | paste -sd " " - || true)
+
+if [ -n "$FILES" ]; then
+    black "$FILES"
+    git add -u "$FILES"
+fi
+#+end_src
+
+To skip running pre commit hook, use ~--no-verify~:
+
+~git commit --no-verify~
+
+~git commit --amend --no-edit --no-verify~
+
+*** CI
+
+I think formatting should be checked in CI as well to prevent pushing unformatted code. This is the last line of defense.
+
+** Configuration
+
+It's good by default and there is not a lot of things to config. The only thing you might want to configure is max line length.
+To force line length, there is an argument:
+
+#+begin_src sh
+-l, --line-length INTEGER       How many characters per line to allow.
+                                  [default: 88]
+#+end_src
+
+By default black using 88 chars limit. I think it is a good choice, but as for me it's more comfortable to have old good 79 characters. Then you can fit 2 panes of code side by side on the 13 inch display.
+
+To force some black rules, toml file can be used. Place it in any subdirectory of git project, black will look for config file in parent directories until it gets to the root of git repo.
+
+*File*: ~pyproject.toml~
+
+#+begin_src ini
+[tool.black]
+line-length = 79
+#+end_src
+
+
+** Limitations
+
+- Can't split string lines
+  There is an issue on GitHub, it's not trivial problem but not rocket science
+- Doesn't sort imports (but formats them)
+
+
+** Code examples
+
+There are several popular and wide known open source projects using black.
+
+You can have a look at their code to get an idea how it will look.
+
+- [[https://github.com/tox-dev/tox][Tox]]
+- [[https://github.com/pytest-dev/pytest][Pytest]]
+
+
+** Links
+
+1. [[https://github.com/psf/black][Github]]
+2. [[https://black.readthedocs.io/en/stable/][Docs]]
+3. [[https://www.youtube.com/watch?v=esZLCuWs_2Y&feature=youtu.be][PyCon Talk]]
+4. [[https://black.now.sh/][Playground]]

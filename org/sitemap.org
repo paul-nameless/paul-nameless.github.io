@@ -1,5 +1,6 @@
 #+TITLE: 
 
+- 2021-03-19 [[file:black.org][Black Python formatting]]
 - 2021-01-30 [[file:emacs-org-mode-100-books.org][Emacs, org-mode and 100 books in a year]]
 - 2020-11-20 [[file:mastering-kitty.org][Mastering kitty terminal]]
 - 2020-11-19 [[file:index.org][Paul Nameless page]]
