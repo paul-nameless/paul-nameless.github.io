@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-19 Fri 21:03 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 2023-01-21 Sat 10:50 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mastering kitty terminal</title>
-<meta name="generator" content="Org mode">
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -28,8 +28,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -37,22 +38,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -188,61 +189,14 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel='stylesheet' type='text/css' href='css/style.css' />
 <link rel='icon' type='image/png' href='/favicon.png'>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
 <div id="org-div-home-and-up">
                                <a accesskey="H" href="/">Home</a>
-                               </div><div id="content">
+                               </div><div id="content" class="content">
 <header>
 <h1 class="title">Mastering kitty terminal</h1>
 </header><p>
@@ -264,7 +218,7 @@ My life was desperate and wasteful before I found kitty.
 </p>
 
 
-<figure>
+<figure id="org00eb78a">
 <img src="img/kitty.jpg" alt="kitty.jpg">
 
 <figcaption><span class="figure-number">Figure 1: </span>kitty - an animal</figcaption>
@@ -275,7 +229,7 @@ Not that one, this one.
 </p>
 
 
-<figure>
+<figure id="org31726bc">
 <img src="img/the-kitty.png" alt="the-kitty.png">
 
 <figcaption><span class="figure-number">Figure 2: </span>kitty - a terminal</figcaption>
@@ -290,7 +244,7 @@ One thing that I like about it is <code>tabs</code>. They were made as a simple 
 </p>
 
 
-<figure>
+<figure id="org2c2d8b1">
 <img src="img/new-tab.png" alt="new-tab.png">
 
 <figcaption><span class="figure-number">Figure 3: </span>Tabs are text</figcaption>
@@ -305,7 +259,7 @@ One particular feature that I use every day is theme changer.
 </p>
 
 
-<figure>
+<figure id="org5305837">
 <img src="gif/theme-changer.gif" alt="theme-changer.gif">
 
 <figcaption><span class="figure-number">Figure 4: </span>Change theme on the fly</figcaption>
@@ -339,7 +293,7 @@ Download kitty themes, google to find more
 Create an alias with this command
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #483d8b;">cd</span> ~/.config/kitty/themes &amp;&amp; fzf --preview <span style="color: #8b2252;">'head -n 40 {} &amp;&amp; kitty @ --to unix:/tmp/kitty set-colors -a -c {}'</span>; <span style="color: #483d8b;">cd</span> -
+<pre class="src src-bash"><span style="color: #657b83; font-weight: bold;">cd</span> ~/.config/kitty/themes &amp;&amp; fzf --preview <span style="color: #2aa198;">'head -n 40 {} &amp;&amp; kitty @ --to unix:/tmp/kitty set-colors -a -c {}'</span>; <span style="color: #657b83; font-weight: bold;">cd</span> -
 </pre>
 </div>
 
@@ -352,7 +306,7 @@ For example Unicode input.
 </p>
 
 
-<figure>
+<figure id="org1102ba2">
 <img src="gif/unicode-input.gif" alt="unicode-input.gif">
 
 <figcaption><span class="figure-number">Figure 5: </span>Choose Unicode and paste at cursor</figcaption>
@@ -364,7 +318,7 @@ I know that there are a lot of programs like <code>fpp</code> and a lot of plugi
 </p>
 
 
-<figure>
+<figure id="orgac78dbd">
 <img src="gif/file-path-chooser.gif" alt="file-path-chooser.gif">
 
 <figcaption><span class="figure-number">Figure 6: </span>Choose file path and paste</figcaption>
@@ -379,7 +333,7 @@ But sometimes you might need to select something specific. Well no problema amig
 </p>
 
 
-<figure>
+<figure id="org7e4d49e">
 <img src="gif/clipboard.gif" alt="clipboard.gif">
 
 <figcaption><span class="figure-number">Figure 7: </span>Find and copy</figcaption>
@@ -401,9 +355,9 @@ Add line below to kitty.conf. <code>pipe</code> means pipe the buffer of the scr
 This is quite tricky script which is done to keep colored text of the term and maps <code>q</code> to exit vim faster and does not copies new line when copying.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: brightgreen;">#</span><span style="color: brightgreen;">!/bin/</span><span style="color: #a020f0;">sh</span>
-cat - | awk <span style="color: #8b2252;">'/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}'</span> &gt; /tmp/buff
-vim -c <span style="color: #8b2252;">'term tail -n 200 /tmp/buff'</span> -c <span style="color: #8b2252;">':only'</span> -c <span style="color: #8b2252;">'nnoremap q :q!&lt;CR&gt;'</span> -c <span style="color: #8b2252;">'map $ g_'</span> &lt; /dev/tty
+<pre class="src src-sh"><span style="color: #93a1a1;">#</span><span style="color: #93a1a1;">!/bin/</span><span style="color: #859900; font-weight: bold;">sh</span>
+cat - | awk <span style="color: #2aa198;">'/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}'</span> &gt; /tmp/buff
+vim -c <span style="color: #2aa198;">'term tail -n 200 /tmp/buff'</span> -c <span style="color: #2aa198;">':only'</span> -c <span style="color: #2aa198;">'nnoremap q :q!&lt;CR&gt;'</span> -c <span style="color: #2aa198;">'map $ g_'</span> &lt; /dev/tty
 </pre>
 </div>
 
@@ -412,7 +366,7 @@ Next, I use <a href="https://github.com/paul-nameless/tg">telegram in terminal</
 </p>
 
 
-<figure>
+<figure id="org88736c7">
 <img src="gif/jump-to-tab.gif" alt="jump-to-tab.gif">
 
 <figcaption><span class="figure-number">Figure 8: </span>Bang, boom, jump to the tab</figcaption>
@@ -423,7 +377,7 @@ Here is an example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">terminal-notifier -title test -message <span style="color: #8b2252;">'Testing kitty remote control'</span> -execute <span style="color: #8b2252;">'/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window &amp;&amp; /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:[replace with you tab title]'</span>
+<pre class="src src-bash">terminal-notifier -title test -message <span style="color: #2aa198;">'Testing kitty remote control'</span> -execute <span style="color: #2aa198;">'/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window &amp;&amp; /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:[replace with you tab title]'</span>
 </pre>
 </div>
 
@@ -433,7 +387,7 @@ A layout is an arrangement of multiple kitty windows inside a top-level OS windo
 </p>
 
 
-<figure>
+<figure id="org3935c43">
 <img src="gif/layouts.gif" alt="layouts.gif">
 
 <figcaption><span class="figure-number">Figure 9: </span>Split window however you want</figcaption>
@@ -444,7 +398,7 @@ There is nothing special nowadays to be able to view images in a terminal. It's 
 </p>
 
 
-<figure>
+<figure id="org718fda8">
 <img src="gif/icat.gif" alt="icat.gif">
 
 <figcaption><span class="figure-number">Figure 10: </span>Images in terminal</figcaption>
@@ -455,7 +409,7 @@ There is nothing special nowadays to be able to view images in a terminal. It's 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #483d8b;">alias</span> <span style="color: #ff00ff;">icat</span>=<span style="color: #8b2252;">"kitty +kitten icat --align=left"</span>
+<pre class="src src-sh"><span style="color: #657b83; font-weight: bold;">alias</span> <span style="color: #268bd2;">icat</span>=<span style="color: #2aa198;">"kitty +kitten icat --align=left"</span>
 </pre>
 </div>
 
@@ -485,15 +439,9 @@ Helpful links
 </ol>
 </div>
 <div id="postamble" class="status">
-<hr><br />
+<hr>
 To get in touch, email me at <a href="mailto:reacsdas@gmail.com">reacsdas@gmail.com</a> <br /><br />
 Discuss and comment in <a href="https://t.me/reacsdas">Telegram</a> | <a href="https://github.com/paul-nameless">Github</a> | <a href="https://twitter.com/paul_nameless">Twitter</a><br/>
-<br/>
-<form action="https://42emails.com/api/email">
-  <input type="text" name="email" placeholder="Email" />
-  <input type="hidden" name="form_id" value="c88adf06aac24ae5b6798b33a1075330" />
-  <input type="submit" value="Subscribe" /><br/>
-</form>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2c0ad197c226461eaccf6861b45f1cf8"}'>
