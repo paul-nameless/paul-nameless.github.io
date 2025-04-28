@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-01-21 Sat 10:50 -->
+<!-- 2025-04-28 Mon 22:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Black Python formatting</title>
@@ -188,7 +188,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+  .org-svg { }
 </style>
 <link rel='stylesheet' type='text/css' href='css/style.css' />
 <link rel='icon' type='image/png' href='/favicon.png'>
@@ -216,9 +216,9 @@ Blackened code looks the same regardless of the project you're reading. Formatti
 </p>
 
 
-<div id="outline-container-org6ed0f56" class="outline-2">
-<h2 id="org6ed0f56">Why</h2>
-<div class="outline-text-2" id="text-org6ed0f56">
+<div id="outline-container-orgead54c1" class="outline-2">
+<h2 id="orgead54c1">Why</h2>
+<div class="outline-text-2" id="text-orgead54c1">
 <blockquote>
 <p>
 Black is opinionated so you don't have to be.
@@ -248,13 +248,13 @@ Don't waste your time arguing about code style. Black it, forget it.
 </div>
 
 
-<div id="outline-container-org14b4c30" class="outline-2">
-<h2 id="org14b4c30">Usage</h2>
-<div class="outline-text-2" id="text-org14b4c30">
+<div id="outline-container-orgdfb7f94" class="outline-2">
+<h2 id="orgdfb7f94">Usage</h2>
+<div class="outline-text-2" id="text-orgdfb7f94">
 </div>
-<div id="outline-container-org2064783" class="outline-3">
-<h3 id="org2064783">Install</h3>
-<div class="outline-text-3" id="text-org2064783">
+<div id="outline-container-orgd013d4d" class="outline-3">
+<h3 id="orgd013d4d">Install</h3>
+<div class="outline-text-3" id="text-orgd013d4d">
 <div class="org-src-container">
 <pre class="src src-sh">pip install black
 </pre>
@@ -262,26 +262,26 @@ Don't waste your time arguing about code style. Black it, forget it.
 </div>
 </div>
 
-<div id="outline-container-org64491b8" class="outline-3">
-<h3 id="org64491b8">Manually</h3>
-<div class="outline-text-3" id="text-org64491b8">
+<div id="outline-container-org3a4319f" class="outline-3">
+<h3 id="org3a4319f">Manually</h3>
+<div class="outline-text-3" id="text-org3a4319f">
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">formats file in place</span>
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">formats file in place</span>
 black [file]
 
-<span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">just check</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">just check</span>
 black -c [file]
 
-<span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">just output a diff for each file</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">just output a diff for each file</span>
 black --diff [file]
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1ba4089" class="outline-3">
-<h3 id="org1ba4089">Plugins</h3>
-<div class="outline-text-3" id="text-org1ba4089">
+<div id="outline-container-orgac1375e" class="outline-3">
+<h3 id="orgac1375e">Plugins</h3>
+<div class="outline-text-3" id="text-orgac1375e">
 <p>
 There are plugins for anything:
 </p>
@@ -301,9 +301,9 @@ For more info have a look at <a href="https://github.com/psf/black#editor-integr
 </div>
 </div>
 
-<div id="outline-container-org67f3ca7" class="outline-3">
-<h3 id="org67f3ca7">Git hook</h3>
-<div class="outline-text-3" id="text-org67f3ca7">
+<div id="outline-container-org0aa1670" class="outline-3">
+<h3 id="org0aa1670">Git hook</h3>
+<div class="outline-text-3" id="text-org0aa1670">
 <p>
 Use git <code>pre-commit</code> hook.
 </p>
@@ -317,17 +317,17 @@ It will automatically reformat files and add them to commit.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #93a1a1;">#</span><span style="color: #93a1a1;">!/bin/</span><span style="color: #859900; font-weight: bold;">sh</span>
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
 
-<span style="color: #657b83; font-weight: bold;">set</span> -e
+<span style="font-weight: bold;">set</span> -e
 
-<span style="color: #268bd2;">ROOT</span>=$(git rev-parse --show-toplevel)
-<span style="color: #268bd2;">FILES</span>=$(git diff --name-status --cached | awk <span style="color: #2aa198;">'{print "$2"}'</span> | grep <span style="color: #2aa198;">'\.py'</span> | xargs -I {} <span style="color: #657b83; font-weight: bold;">echo</span> <span style="color: #2aa198;">"$ROOT/{}"</span> | paste -sd <span style="color: #2aa198;">" "</span> - || <span style="color: #657b83; font-weight: bold;">true</span>)
+<span style="font-weight: bold; font-style: italic;">ROOT</span>=$(git rev-parse --show-toplevel)
+<span style="font-weight: bold; font-style: italic;">FILES</span>=$(git diff --name-status --cached | awk <span style="font-style: italic;">'{print "$2"}'</span> | grep <span style="font-style: italic;">'\.py'</span> | xargs -I {} <span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"$ROOT/{}"</span> | paste -sd <span style="font-style: italic;">" "</span> - || <span style="font-weight: bold;">true</span>)
 
-<span style="color: #859900; font-weight: bold;">if</span> [ -n <span style="color: #2aa198;">"$FILES"</span> ]; <span style="color: #859900; font-weight: bold;">then</span>
-    black <span style="color: #2aa198;">"$FILES"</span>
-    git add -u <span style="color: #2aa198;">"$FILES"</span>
-<span style="color: #859900; font-weight: bold;">fi</span>
+<span style="font-weight: bold;">if</span> [ -n <span style="font-style: italic;">"$FILES"</span> ]; <span style="font-weight: bold;">then</span>
+    black <span style="font-style: italic;">"$FILES"</span>
+    git add -u <span style="font-style: italic;">"$FILES"</span>
+<span style="font-weight: bold;">fi</span>
 </pre>
 </div>
 
@@ -345,9 +345,9 @@ To skip running pre commit hook, use <code>--no-verify</code>:
 </div>
 </div>
 
-<div id="outline-container-org8c23cbf" class="outline-3">
-<h3 id="org8c23cbf">CI</h3>
-<div class="outline-text-3" id="text-org8c23cbf">
+<div id="outline-container-orgd2cc279" class="outline-3">
+<h3 id="orgd2cc279">CI</h3>
+<div class="outline-text-3" id="text-orgd2cc279">
 <p>
 I think formatting should be checked in CI as well to prevent pushing unformatted code. This is the last line of defense.
 </p>
@@ -355,9 +355,9 @@ I think formatting should be checked in CI as well to prevent pushing unformatte
 </div>
 </div>
 
-<div id="outline-container-org8b4c79b" class="outline-2">
-<h2 id="org8b4c79b">Configuration</h2>
-<div class="outline-text-2" id="text-org8b4c79b">
+<div id="outline-container-org19aa622" class="outline-2">
+<h2 id="org19aa622">Configuration</h2>
+<div class="outline-text-2" id="text-org19aa622">
 <p>
 It's good by default and there is not a lot of things to config. The only thing you might want to configure is max line length.
 To force line length, there is an argument:
@@ -390,9 +390,9 @@ line-length = 79
 </div>
 
 
-<div id="outline-container-org69504ac" class="outline-2">
-<h2 id="org69504ac">Limitations</h2>
-<div class="outline-text-2" id="text-org69504ac">
+<div id="outline-container-orgab26132" class="outline-2">
+<h2 id="orgab26132">Limitations</h2>
+<div class="outline-text-2" id="text-orgab26132">
 <ul class="org-ul">
 <li>Can't split string lines
 There is an issue on GitHub, it's not trivial problem but not rocket science</li>
@@ -402,9 +402,9 @@ There is an issue on GitHub, it's not trivial problem but not rocket science</li
 </div>
 
 
-<div id="outline-container-org9898aac" class="outline-2">
-<h2 id="org9898aac">Code examples</h2>
-<div class="outline-text-2" id="text-org9898aac">
+<div id="outline-container-org4c1d21e" class="outline-2">
+<h2 id="org4c1d21e">Code examples</h2>
+<div class="outline-text-2" id="text-org4c1d21e">
 <p>
 There are several popular and wide known open source projects using black.
 </p>
@@ -421,9 +421,9 @@ You can have a look at their code to get an idea how it will look.
 </div>
 
 
-<div id="outline-container-orgbb95e15" class="outline-2">
-<h2 id="orgbb95e15">Links</h2>
-<div class="outline-text-2" id="text-orgbb95e15">
+<div id="outline-container-org1ddd340" class="outline-2">
+<h2 id="org1ddd340">Links</h2>
+<div class="outline-text-2" id="text-org1ddd340">
 <ol class="org-ol">
 <li><a href="https://github.com/psf/black">Github</a></li>
 <li><a href="https://black.readthedocs.io/en/stable/">Docs</a></li>
@@ -435,8 +435,7 @@ You can have a look at their code to get an idea how it will look.
 </div>
 <div id="postamble" class="status">
 <hr>
-To get in touch, email me at <a href="mailto:reacsdas@gmail.com">reacsdas@gmail.com</a> <br /><br />
-Discuss and comment in <a href="https://t.me/reacsdas">Telegram</a> | <a href="https://github.com/paul-nameless">Github</a> | <a href="https://twitter.com/paul_nameless">Twitter</a><br/>
+To get in touch, email me at <a href="mailto:reacsdas@gmail.com">reacsdas@gmail.com</a> | <a href="https://github.com/paul-nameless">Github</a> <br /><br />
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2c0ad197c226461eaccf6861b45f1cf8"}'>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-01-21 Sat 10:50 -->
+<!-- 2025-04-28 Mon 22:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mastering kitty terminal</title>
@@ -188,7 +188,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+  .org-svg { }
 </style>
 <link rel='stylesheet' type='text/css' href='css/style.css' />
 <link rel='icon' type='image/png' href='/favicon.png'>
@@ -218,7 +218,7 @@ My life was desperate and wasteful before I found kitty.
 </p>
 
 
-<figure id="org00eb78a">
+<figure id="orgf2e3596">
 <img src="img/kitty.jpg" alt="kitty.jpg">
 
 <figcaption><span class="figure-number">Figure 1: </span>kitty - an animal</figcaption>
@@ -229,7 +229,7 @@ Not that one, this one.
 </p>
 
 
-<figure id="org31726bc">
+<figure id="org484bb41">
 <img src="img/the-kitty.png" alt="the-kitty.png">
 
 <figcaption><span class="figure-number">Figure 2: </span>kitty - a terminal</figcaption>
@@ -244,7 +244,7 @@ One thing that I like about it is <code>tabs</code>. They were made as a simple 
 </p>
 
 
-<figure id="org2c2d8b1">
+<figure id="org17a2222">
 <img src="img/new-tab.png" alt="new-tab.png">
 
 <figcaption><span class="figure-number">Figure 3: </span>Tabs are text</figcaption>
@@ -259,7 +259,7 @@ One particular feature that I use every day is theme changer.
 </p>
 
 
-<figure id="org5305837">
+<figure id="org92d300d">
 <img src="gif/theme-changer.gif" alt="theme-changer.gif">
 
 <figcaption><span class="figure-number">Figure 4: </span>Change theme on the fly</figcaption>
@@ -293,7 +293,7 @@ Download kitty themes, google to find more
 Create an alias with this command
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #657b83; font-weight: bold;">cd</span> ~/.config/kitty/themes &amp;&amp; fzf --preview <span style="color: #2aa198;">'head -n 40 {} &amp;&amp; kitty @ --to unix:/tmp/kitty set-colors -a -c {}'</span>; <span style="color: #657b83; font-weight: bold;">cd</span> -
+<pre class="src src-bash"><span style="font-weight: bold;">cd</span> ~/.config/kitty/themes &amp;&amp; fzf --preview <span style="font-style: italic;">'head -n 40 {} &amp;&amp; kitty @ --to unix:/tmp/kitty set-colors -a -c {}'</span>; <span style="font-weight: bold;">cd</span> -
 </pre>
 </div>
 
@@ -306,7 +306,7 @@ For example Unicode input.
 </p>
 
 
-<figure id="org1102ba2">
+<figure id="org41f167f">
 <img src="gif/unicode-input.gif" alt="unicode-input.gif">
 
 <figcaption><span class="figure-number">Figure 5: </span>Choose Unicode and paste at cursor</figcaption>
@@ -318,7 +318,7 @@ I know that there are a lot of programs like <code>fpp</code> and a lot of plugi
 </p>
 
 
-<figure id="orgac78dbd">
+<figure id="org0707202">
 <img src="gif/file-path-chooser.gif" alt="file-path-chooser.gif">
 
 <figcaption><span class="figure-number">Figure 6: </span>Choose file path and paste</figcaption>
@@ -333,7 +333,7 @@ But sometimes you might need to select something specific. Well no problema amig
 </p>
 
 
-<figure id="org7e4d49e">
+<figure id="org75901eb">
 <img src="gif/clipboard.gif" alt="clipboard.gif">
 
 <figcaption><span class="figure-number">Figure 7: </span>Find and copy</figcaption>
@@ -355,9 +355,9 @@ Add line below to kitty.conf. <code>pipe</code> means pipe the buffer of the scr
 This is quite tricky script which is done to keep colored text of the term and maps <code>q</code> to exit vim faster and does not copies new line when copying.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #93a1a1;">#</span><span style="color: #93a1a1;">!/bin/</span><span style="color: #859900; font-weight: bold;">sh</span>
-cat - | awk <span style="color: #2aa198;">'/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}'</span> &gt; /tmp/buff
-vim -c <span style="color: #2aa198;">'term tail -n 200 /tmp/buff'</span> -c <span style="color: #2aa198;">':only'</span> -c <span style="color: #2aa198;">'nnoremap q :q!&lt;CR&gt;'</span> -c <span style="color: #2aa198;">'map $ g_'</span> &lt; /dev/tty
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
+cat - | awk <span style="font-style: italic;">'/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}'</span> &gt; /tmp/buff
+vim -c <span style="font-style: italic;">'term tail -n 200 /tmp/buff'</span> -c <span style="font-style: italic;">':only'</span> -c <span style="font-style: italic;">'nnoremap q :q!&lt;CR&gt;'</span> -c <span style="font-style: italic;">'map $ g_'</span> &lt; /dev/tty
 </pre>
 </div>
 
@@ -366,7 +366,7 @@ Next, I use <a href="https://github.com/paul-nameless/tg">telegram in terminal</
 </p>
 
 
-<figure id="org88736c7">
+<figure id="orgcc91c99">
 <img src="gif/jump-to-tab.gif" alt="jump-to-tab.gif">
 
 <figcaption><span class="figure-number">Figure 8: </span>Bang, boom, jump to the tab</figcaption>
@@ -377,7 +377,7 @@ Here is an example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">terminal-notifier -title test -message <span style="color: #2aa198;">'Testing kitty remote control'</span> -execute <span style="color: #2aa198;">'/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window &amp;&amp; /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:[replace with you tab title]'</span>
+<pre class="src src-bash">terminal-notifier -title test -message <span style="font-style: italic;">'Testing kitty remote control'</span> -execute <span style="font-style: italic;">'/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window &amp;&amp; /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:[replace with you tab title]'</span>
 </pre>
 </div>
 
@@ -387,7 +387,7 @@ A layout is an arrangement of multiple kitty windows inside a top-level OS windo
 </p>
 
 
-<figure id="org3935c43">
+<figure id="org64ba568">
 <img src="gif/layouts.gif" alt="layouts.gif">
 
 <figcaption><span class="figure-number">Figure 9: </span>Split window however you want</figcaption>
@@ -398,7 +398,7 @@ There is nothing special nowadays to be able to view images in a terminal. It's 
 </p>
 
 
-<figure id="org718fda8">
+<figure id="org49b4261">
 <img src="gif/icat.gif" alt="icat.gif">
 
 <figcaption><span class="figure-number">Figure 10: </span>Images in terminal</figcaption>
@@ -409,7 +409,7 @@ There is nothing special nowadays to be able to view images in a terminal. It's 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #657b83; font-weight: bold;">alias</span> <span style="color: #268bd2;">icat</span>=<span style="color: #2aa198;">"kitty +kitten icat --align=left"</span>
+<pre class="src src-sh"><span style="font-weight: bold;">alias</span> <span style="font-weight: bold; font-style: italic;">icat</span>=<span style="font-style: italic;">"kitty +kitten icat --align=left"</span>
 </pre>
 </div>
 
@@ -440,8 +440,7 @@ Helpful links
 </div>
 <div id="postamble" class="status">
 <hr>
-To get in touch, email me at <a href="mailto:reacsdas@gmail.com">reacsdas@gmail.com</a> <br /><br />
-Discuss and comment in <a href="https://t.me/reacsdas">Telegram</a> | <a href="https://github.com/paul-nameless">Github</a> | <a href="https://twitter.com/paul_nameless">Twitter</a><br/>
+To get in touch, email me at <a href="mailto:reacsdas@gmail.com">reacsdas@gmail.com</a> | <a href="https://github.com/paul-nameless">Github</a> <br /><br />
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2c0ad197c226461eaccf6861b45f1cf8"}'>
