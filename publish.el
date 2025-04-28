@@ -10,8 +10,7 @@
   "Post-amble for whole blog."
   (concat
   "<hr>
-To get in touch, email me at <a href=\"mailto:reacsdas@gmail.com\">reacsdas@gmail.com</a> <br /><br />
-Discuss and comment in <a href=\"https://t.me/reacsdas\">Telegram</a> | <a href=\"https://github.com/paul-nameless\">Github</a> | <a href=\"https://twitter.com/paul_nameless\">Twitter</a><br/>
+To get in touch, email me at <a href=\"mailto:reacsdas@gmail.com\">reacsdas@gmail.com</a> | <a href=\"https://github.com/paul-nameless\">Github</a> <br /><br />
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c0ad197c226461eaccf6861b45f1cf8\"}'>

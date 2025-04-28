@@ -1,8 +1,8 @@
-#+TITLE: Paul Nameless page
+#+TITLE: Paul Nameless
 #+DATE: <2020-11-19 Thu>
 
 # #+INCLUDE: sitemap.org :lines "-5" :only-contents t
 
-I am a Software Developer by passion and Emacs user by own will. I intend to use this space for sharing my experience in the hope that it may be helpful to others and my future self.
+I am a Software Developer by passion and an Emacs user by own will.
 
 #+INCLUDE: sitemap.org
