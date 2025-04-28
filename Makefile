@@ -15,3 +15,4 @@ clean:
 		@rm -rvf *.elc
 		@rm -rvf docs/*
 		@rm -rvf ~/.org-timestamps/*
+		echo paul-nameless.com > docs/CNAME
