@@ -1,5 +1,6 @@
-#+TITLE: 
+#+TITLE:
 
+- 2025-05-06 [[file:ai-agent.org][The Hidden Challenges of AI Agents]]
 - 2021-03-19 [[file:black.org][Black Python formatting]]
 - 2021-01-30 [[file:emacs-org-mode-100-books.org][Emacs, org-mode and 100 books in a year]]
 - 2020-11-20 [[file:mastering-kitty.org][Mastering kitty terminal]]

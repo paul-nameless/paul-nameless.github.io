@@ -4,7 +4,7 @@
 <!-- 2025-05-06 Tue 11:22 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Paul Nameless </title>
+<title>The Hidden Challenges of AI Agents</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -198,18 +198,95 @@
                                <a accesskey="H" href="/">Home</a>
                                </div><div id="content" class="content">
 <header>
-<h1 class="title">Paul Nameless </h1>
+<h1 class="title">The Hidden Challenges of AI Agents</h1>
 </header><p>
-I am a Software Developer by passion and an Emacs user by own will.
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2025-05-06 Tue&gt;</span></span>
 </p>
 
-<ul class="org-ul">
-<li>2025-05-06 <a href="ai-agent.html">The Hidden Challenges of AI Agents</a></li>
-<li>2021-03-19 <a href="black.html">Black Python formatting</a></li>
-<li>2021-01-30 <a href="emacs-org-mode-100-books.html">Emacs, org-mode and 100 books in a year</a></li>
-<li>2020-11-20 <a href="mastering-kitty.html">Mastering kitty terminal</a></li>
-<li>2020-11-19 <a href="index.html">Paul Nameless</a></li>
-</ul>
+<p>
+I've been curious about how AI agents work, so I decided to dive in and build one myself. While working on my own coding agent <a href="https://github.com/paul-nameless/aicode">AiCode</a>, I stumbled upon some interesting insights.
+</p>
+
+<div id="outline-container-org5fb354d" class="outline-2">
+<h2 id="org5fb354d">Function Calling</h2>
+<div class="outline-text-2" id="text-org5fb354d">
+<p>
+Function calling enables language models to use external tools in a structured way. Instead of parsing free-form text, the model outputs function names and arguments in a predefined format that can be reliably executed.
+</p>
+
+<p>
+It seems straightforward, right? Just add functions and you have a coding agent ready. But you quickly encounter another challenge: the context size limit.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4028a1c" class="outline-2">
+<h2 id="org4028a1c">Summarization</h2>
+<div class="outline-text-2" id="text-org4028a1c">
+<p>
+This is where we need to summarize previous conversations without losing important information, ensuring the LLM maintains continuity of thought.
+</p>
+
+<p>
+However, traditional summarization often preserves irrelevant details while potentially discarding critical information.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7143232" class="outline-2">
+<h2 id="org7143232">Simulacrum or Agent Dispatching</h2>
+<div class="outline-text-2" id="text-org7143232">
+<p>
+Taking inspiration from the book "Mother of Learning", "simulacrum" or agent dispatching techniques offer a more intelligent approach. Rather than simple summarization, this method creates copies of itself with different tasks. The main agent then receives a summarized version of their work. This way, each copy operates within its own context window, while the main agent's context only contains condensed versions of each "simulacrum's" work.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2a8c1d1" class="outline-2">
+<h2 id="org2a8c1d1">Caching</h2>
+<div class="outline-text-2" id="text-org2a8c1d1">
+<p>
+Implementing caching reduces unnecessary token usage: system prompts, rule files, and other repeated elements can be cached to lower computational costs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd9cea14" class="outline-2">
+<h2 id="orgd9cea14">Batch Processing</h2>
+<div class="outline-text-2" id="text-orgd9cea14">
+<p>
+Grouping function calls into batches reduces the number of requests (lowering token usage and costs). This approach eliminates the need to send the entire conversation for each tool call. Instead, we can execute multiple functions and then return all results at once. This optimization works best for independent tasks that don't rely on each other's outputs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org552f777" class="outline-2">
+<h2 id="org552f777">Future Directions</h2>
+<div class="outline-text-2" id="text-org552f777">
+<p>
+The current limitations of AI coding agents represent opportunities for new ideas:
+</p>
+
+<ol class="org-ol">
+<li><b><b>Collaborative model voting</b></b>: Have two or more distinct models perform the same task independently, then review each other's outputs and vote for the best result. Present the top choice to the user, with the option to view the alternatives as well.</li>
+
+<li><b><b>Self-Improvement Mechanisms</b></b>: Have two or more distinct models review the initial agent's work and enhance it.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge1d361b" class="outline-2">
+<h2 id="orge1d361b">Summary</h2>
+<div class="outline-text-2" id="text-orge1d361b">
+<p>
+Building effective AI coding agents requires going beyond the fundamentals.
+</p>
+
+<p>
+The most revolutionary solutions often emerge from working creatively within current limitations rather than waiting for them to disappear.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <hr>
