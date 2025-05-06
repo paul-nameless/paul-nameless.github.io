@@ -1,0 +1,44 @@
+#+TITLE: The Hidden Challenges of AI Agents
+#+DATE: <2025-05-01 Thu>
+
+<2025-05-06 Tue>
+
+I've been curious about how AI agents work, so I decided to dive in and build one myself. While working on my own coding agent [[https://github.com/paul-nameless/aicode][AiCode]], I stumbled upon some interesting insights.
+
+** Function Calling
+
+Function calling enables language models to use external tools in a structured way. Instead of parsing free-form text, the model outputs function names and arguments in a predefined format that can be reliably executed.
+
+It seems straightforward, right? Just add functions and you have a coding agent ready. But you quickly encounter another challenge: the context size limit.
+
+** Summarization
+
+This is where we need to summarize previous conversations without losing important information, ensuring the LLM maintains continuity of thought.
+
+However, traditional summarization often preserves irrelevant details while potentially discarding critical information.
+
+** Simulacrum or Agent Dispatching
+
+Taking inspiration from the book "Mother of Learning", "simulacrum" or agent dispatching techniques offer a more intelligent approach. Rather than simple summarization, this method creates copies of itself with different tasks. The main agent then receives a summarized version of their work. This way, each copy operates within its own context window, while the main agent's context only contains condensed versions of each "simulacrum's" work.
+
+** Caching
+
+Implementing caching reduces unnecessary token usage: system prompts, rule files, and other repeated elements can be cached to lower computational costs.
+
+** Batch Processing
+
+Grouping function calls into batches reduces the number of requests (lowering token usage and costs). This approach eliminates the need to send the entire conversation for each tool call. Instead, we can execute multiple functions and then return all results at once. This optimization works best for independent tasks that don't rely on each other's outputs.
+
+** Future Directions
+
+The current limitations of AI coding agents represent opportunities for new ideas:
+
+1. **Collaborative model voting**: Have two or more distinct models perform the same task independently, then review each other's outputs and vote for the best result. Present the top choice to the user, with the option to view the alternatives as well.
+
+2. **Self-Improvement Mechanisms**: Have two or more distinct models review the initial agent's work and enhance it.
+
+** Summary
+
+Building effective AI coding agents requires going beyond the fundamentals.
+
+The most revolutionary solutions often emerge from working creatively within current limitations rather than waiting for them to disappear.
